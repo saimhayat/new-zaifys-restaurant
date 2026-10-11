@@ -1,0 +1,3 @@
+# Single-page app fallback: serve index.html for any path the server
+# doesn't have a real file for (e.g. /admin, /orders, /checkout).
+/*    /index.html   200

@@ -1,0 +1,99 @@
+/* ===================================================
+   ZAIFY'S RESTAURANT — STATS BANNER STYLESHEET
+   Theme-aware · gradient numerals
+   =================================================== */
+
+.stats {
+  background: var(--color-bg);
+  position: relative;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--glow-soft);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item__value {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4rem;
+  background: var(--gradient-gold-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.stat-item__label {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ---- Tablet ---- */
+@media (max-width: 900px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(2) {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1.6rem;
+  }
+
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) {
+    padding-top: 1.6rem;
+  }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 480px) {
+  .stats {
+    padding: var(--space-lg) 0;
+  }
+
+  .stat-item {
+    padding: 1.1rem 0.5rem;
+  }
+
+  .stat-item__label {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+}

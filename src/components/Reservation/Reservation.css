@@ -1,0 +1,245 @@
+/* ===================================================
+   ZAIFY'S RESTAURANT — RESERVATION SECTION STYLESHEET
+   Glass form panel · theme-aware inputs
+   =================================================== */
+
+/* ---- Grid ---- */
+.reservation__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: center;
+}
+
+/* ---- Media ---- */
+.reservation__media-wrapper {
+  transition: transform 0.5s var(--ease-luxury, ease);
+}
+
+.reservation__media-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.reservation__media {
+  position: relative;
+  border-radius: var(--radius-lg, 18px);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-solid);
+}
+
+.reservation__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+/* Floating glass note */
+.reservation__media-note {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background: var(--color-card);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  color: var(--color-text);
+  padding: 1.3rem 1.5rem;
+  border-radius: var(--radius-lg, 18px);
+  border: 1px solid var(--color-border-gold);
+  box-shadow: var(--shadow-soft);
+  z-index: 2;
+}
+
+.reservation__media-note-eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+.reservation__media-note-text {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ---- Form panel ---- */
+.reservation__form-wrap {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 18px);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: clamp(1.75rem, 5vw, 3.25rem);
+}
+
+.reservation__form-wrap .section-sub {
+  color: var(--color-text-muted);
+  margin-bottom: 2.25rem;
+}
+
+/* ---- Success panel ---- */
+.reservation__success {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: rgba(245, 179, 1, 0.06);
+  border: 1px dashed var(--color-secondary);
+  color: var(--color-accent-text);
+  padding: 1.1rem 1.4rem;
+  border-radius: var(--radius-md, 12px);
+  margin-bottom: 2rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  animation: reservation-fade-in 0.4s var(--ease-luxury, ease);
+}
+
+@keyframes reservation-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reservation__success strong {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ---- Fields ---- */
+.reservation__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.reservation__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.reservation__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  position: relative;
+}
+
+.reservation__field label {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+}
+
+/* Inputs — 16px font on mobile prevents iOS zoom */
+.reservation__field input,
+.reservation__field select,
+.reservation__field textarea {
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md, 12px);
+  padding: 0.85rem 1.1rem;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  background: var(--color-bg-soft);
+  transition: border-color 0.3s ease,
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+  width: 100%;
+  min-height: 48px;
+}
+
+@media (max-width: 768px) {
+  .reservation__field input,
+  .reservation__field select,
+  .reservation__field textarea {
+    font-size: 16px;
+  }
+}
+
+.reservation__field input:focus,
+.reservation__field select:focus,
+.reservation__field textarea:focus {
+  border-color: var(--color-secondary);
+  background-color: var(--color-card-hover);
+  box-shadow: 0 0 0 3px rgba(245, 179, 1, 0.15);
+  outline: none;
+}
+
+.reservation__field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Invalid states */
+.reservation__field input[aria-invalid="true"],
+.reservation__field select[aria-invalid="true"] {
+  border-color: var(--color-danger);
+  background-color: rgba(248, 113, 113, 0.05);
+}
+
+.reservation__field input[aria-invalid="true"]:focus,
+.reservation__field select[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15);
+}
+
+/* Error message */
+.reservation__error {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-danger);
+  letter-spacing: 0.02em;
+  margin-top: 0.2rem;
+  animation: field-error-enter 0.3s var(--ease-luxury, ease);
+}
+
+@keyframes field-error-enter {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Submit ---- */
+.reservation__submit {
+  margin-top: 0.6rem;
+  width: 100%;
+  padding: 1.05rem;
+  font-size: 0.92rem;
+  min-height: 52px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 992px) {
+  .reservation__grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .reservation__media img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 768px) {
+  .reservation__row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservation__media-note {
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: 0.85rem;
+    padding: 1rem 1.1rem;
+  }
+
+  .reservation__media-note-text {
+    font-size: 0.8rem;
+  }
+}

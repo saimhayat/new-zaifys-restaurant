@@ -1,0 +1,9 @@
+import { ArrowUpRight, MapPin, Phone, Clock, MessageCircle } from "lucide-react";
+import { useReveal } from "../../hooks/useReveal";
+import { useRestaurantInfo } from "../../store/restaurantStore";
+import "./Contact.css";
+export default function Contact() {
+  const ref = useReveal(), info = useRestaurantInfo();
+  const query=encodeURIComponent(info.address);
+  return <section id="contact" className="contact section-padding"><div className="container contact__layout"><div ref={ref} className="contact__copy reveal"><span className="eyebrow">YOUR TABLE IS THIS WAY</span><h2 className="section-heading">See you<br /><em>in Satellite Town.</em></h2><p className="section-sub">Drop by for a quick bite or make an evening of it.<br />We’ll save you a seat.</p><address className="contact__address"><MapPin size={20} /><span>{info.address}</span></address><a className="contact__phone" href={`tel:${info.phoneHref}`}><Phone size={18} />{info.phone}<ArrowUpRight size={20} /></a><div className="contact__hours"><h3><Clock size={16} /> Come on over</h3>{info.hours.map(slot=><div key={slot.day}><span>{slot.day}</span><strong>{slot.time}</strong></div>)}</div><div className="contact__actions"><a className="btn btn-dark" href={`https://www.google.com/maps/search/?api=1&query=${query}`} target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight size={17} /></a><a className="contact__whatsapp" href={`https://wa.me/${info.whatsappHref}`} target="_blank" rel="noopener noreferrer"><MessageCircle size={16} /> Let’s chat</a></div></div><div className="contact__map"><iframe title="Map to Zaify's Restaurant in Satellite Town" src={`https://www.google.com/maps?q=${query}&output=embed`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><div className="contact__map-label"><span aria-hidden="true">✳</span><strong>Good food. Right here.</strong><MapPin size={17} /></div></div></div></section>;
+}
