@@ -4,6 +4,10 @@
     "height": 1199,
     "variants": [
       {
+        "src": "/images/hero-karahi-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/hero-karahi-480.webp",
         "width": 480
       },
@@ -21,6 +25,14 @@
     "width": 1200,
     "height": 800,
     "variants": [
+      {
+        "src": "/images/photo-1414235077428-338989a2e8c0-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1414235077428-338989a2e8c0-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1414235077428-338989a2e8c0-480.webp",
         "width": 480
@@ -40,6 +52,14 @@
     "height": 800,
     "variants": [
       {
+        "src": "/images/photo-1517248135467-4c7edcad34c4-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1517248135467-4c7edcad34c4-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1517248135467-4c7edcad34c4-480.webp",
         "width": 480
       },
@@ -57,6 +77,14 @@
     "width": 1200,
     "height": 1800,
     "variants": [
+      {
+        "src": "/images/photo-1529543544282-ea669407fca3-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1529543544282-ea669407fca3-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1529543544282-ea669407fca3-480.webp",
         "width": 480
@@ -76,6 +104,14 @@
     "height": 801,
     "variants": [
       {
+        "src": "/images/photo-1544148103-0773bf10d330-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1544148103-0773bf10d330-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1544148103-0773bf10d330-480.webp",
         "width": 480
       },
@@ -93,6 +129,14 @@
     "width": 1200,
     "height": 800,
     "variants": [
+      {
+        "src": "/images/photo-1546964124-0cce460f38ef-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1546964124-0cce460f38ef-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1546964124-0cce460f38ef-480.webp",
         "width": 480
@@ -112,6 +156,14 @@
     "height": 800,
     "variants": [
       {
+        "src": "/images/photo-1547592166-23ac45744acd-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1547592166-23ac45744acd-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1547592166-23ac45744acd-480.webp",
         "width": 480
       },
@@ -129,6 +181,14 @@
     "width": 1200,
     "height": 800,
     "variants": [
+      {
+        "src": "/images/photo-1550507992-eb63ffee0847-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1550507992-eb63ffee0847-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1550507992-eb63ffee0847-480.webp",
         "width": 480
@@ -148,6 +208,14 @@
     "height": 1805,
     "variants": [
       {
+        "src": "/images/photo-1553530666-ba11a7da3888-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1553530666-ba11a7da3888-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1553530666-ba11a7da3888-480.webp",
         "width": 480
       },
@@ -165,6 +233,14 @@
     "width": 1200,
     "height": 1800,
     "variants": [
+      {
+        "src": "/images/photo-1555939594-58d7cb561ad1-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1555939594-58d7cb561ad1-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1555939594-58d7cb561ad1-480.webp",
         "width": 480
@@ -184,6 +260,14 @@
     "height": 1847,
     "variants": [
       {
+        "src": "/images/photo-1577219491135-ce391730fb2c-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1577219491135-ce391730fb2c-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1577219491135-ce391730fb2c-480.webp",
         "width": 480
       },
@@ -201,6 +285,14 @@
     "width": 1200,
     "height": 1007,
     "variants": [
+      {
+        "src": "/images/photo-1585032226651-759b368d7246-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1585032226651-759b368d7246-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1585032226651-759b368d7246-480.webp",
         "width": 480
@@ -220,6 +312,14 @@
     "height": 1600,
     "variants": [
       {
+        "src": "/images/photo-1585937421612-70a008356fbe-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1585937421612-70a008356fbe-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1585937421612-70a008356fbe-480.webp",
         "width": 480
       },
@@ -237,6 +337,14 @@
     "width": 1200,
     "height": 1800,
     "variants": [
+      {
+        "src": "/images/photo-1589302168068-964664d93dc0-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1589302168068-964664d93dc0-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1589302168068-964664d93dc0-480.webp",
         "width": 480
@@ -256,6 +364,14 @@
     "height": 733,
     "variants": [
       {
+        "src": "/images/photo-1599487488170-d11ec9c172f0-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1599487488170-d11ec9c172f0-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1599487488170-d11ec9c172f0-480.webp",
         "width": 480
       },
@@ -273,6 +389,14 @@
     "width": 1200,
     "height": 800,
     "variants": [
+      {
+        "src": "/images/photo-1600891964092-4316c288032e-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1600891964092-4316c288032e-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1600891964092-4316c288032e-480.webp",
         "width": 480
@@ -292,6 +416,14 @@
     "height": 960,
     "variants": [
       {
+        "src": "/images/photo-1603133872878-684f208fb84b-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1603133872878-684f208fb84b-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1603133872878-684f208fb84b-480.webp",
         "width": 480
       },
@@ -309,6 +441,14 @@
     "width": 1200,
     "height": 1799,
     "variants": [
+      {
+        "src": "/images/photo-1610057099431-d73a1c9d2f2f-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1610057099431-d73a1c9d2f2f-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1610057099431-d73a1c9d2f2f-480.webp",
         "width": 480
@@ -328,6 +468,14 @@
     "height": 675,
     "variants": [
       {
+        "src": "/images/photo-1622597467836-f3285f2131b8-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1622597467836-f3285f2131b8-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1622597467836-f3285f2131b8-480.webp",
         "width": 480
       },
@@ -345,6 +493,14 @@
     "width": 1200,
     "height": 800,
     "variants": [
+      {
+        "src": "/images/photo-1624353365286-3f8d62daad51-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1624353365286-3f8d62daad51-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1624353365286-3f8d62daad51-480.webp",
         "width": 480
@@ -364,6 +520,14 @@
     "height": 800,
     "variants": [
       {
+        "src": "/images/photo-1626082927389-6cd097cdc6ec-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1626082927389-6cd097cdc6ec-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1626082927389-6cd097cdc6ec-480.webp",
         "width": 480
       },
@@ -381,6 +545,14 @@
     "width": 1200,
     "height": 1500,
     "variants": [
+      {
+        "src": "/images/photo-1626700051175-6818013e1d4f-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1626700051175-6818013e1d4f-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1626700051175-6818013e1d4f-480.webp",
         "width": 480
@@ -400,6 +572,14 @@
     "height": 1200,
     "variants": [
       {
+        "src": "/images/photo-1631292784640-2b24be784d5d-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1631292784640-2b24be784d5d-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1631292784640-2b24be784d5d-480.webp",
         "width": 480
       },
@@ -417,6 +597,14 @@
     "width": 1200,
     "height": 1800,
     "variants": [
+      {
+        "src": "/images/photo-1631452180519-c014fe946bc7-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1631452180519-c014fe946bc7-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1631452180519-c014fe946bc7-480.webp",
         "width": 480
@@ -436,6 +624,14 @@
     "height": 800,
     "variants": [
       {
+        "src": "/images/photo-1633945274405-b6c8069047b0-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1633945274405-b6c8069047b0-320.webp",
+        "width": 320
+      },
+      {
         "src": "/images/photo-1633945274405-b6c8069047b0-480.webp",
         "width": 480
       },
@@ -453,6 +649,14 @@
     "width": 1200,
     "height": 800,
     "variants": [
+      {
+        "src": "/images/photo-1645112411341-6c4fd023714a-160.webp",
+        "width": 160
+      },
+      {
+        "src": "/images/photo-1645112411341-6c4fd023714a-320.webp",
+        "width": 320
+      },
       {
         "src": "/images/photo-1645112411341-6c4fd023714a-480.webp",
         "width": 480

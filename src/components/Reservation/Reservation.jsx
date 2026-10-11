@@ -2,7 +2,7 @@ import ResponsiveImage from "../ResponsiveImage";
 import { useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
 import { addReservation, useRestaurantInfo } from "../../store/restaurantStore";
-import { validPhone } from "../../utils/forms";
+import { pakistanDateInputValue, validPhone } from "../../utils/forms";
 import "./Reservation.css";
 
 const INITIAL_STATE = {
@@ -44,7 +44,7 @@ function Reservation() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(null);
 
-  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Karachi", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  const today = pakistanDateInputValue();
   const requestText = submitted ? `Hi Zaify’s! I’d like to reserve a table.\nName: ${submitted.name}\nPhone: ${submitted.phone}\nGuests: ${submitted.guests}\nDate: ${submitted.date}\nTime: ${submitted.time}\nSpecial requests: ${submitted.message || "None"}\nReference: ${submitted.id}\nPlease confirm availability.` : "";
 
   const handleChange = (e) => {

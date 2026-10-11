@@ -6,13 +6,13 @@ import { useCart } from "../../context/CartContext";
 import { useDialog } from "../../hooks/useDialog";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Navbar.css";
-const links = [{ label: "Our story", id: "about" }, { label: "The menu", id: "menu" }, { label: "The space", id: "gallery" }, { label: "Visit us", id: "contact" }];
+const links = [{ label: "The menu", id: "menu" }, { label: "Build a daawat", id: "daawat" }, { label: "Our story", id: "about" }, { label: "The space", id: "gallery" }, { label: "Visit us", id: "contact" }];
 export default function Navbar() {
   const [open, setOpen] = useState(false), [scrolled, setScrolled] = useState(false);
   const { totalItems } = useCart(), location = useLocation(), navigate = useNavigate();
   const dialogRef = useDialog(open, () => setOpen(false));
   useEffect(() => { const update = () => setScrolled(window.scrollY > 24); update(); window.addEventListener("scroll", update, { passive: true }); return () => window.removeEventListener("scroll", update); }, []);
-  useEffect(() => { const media = window.matchMedia("(min-width: 901px)"); const close = () => { if (media.matches) setOpen(false); }; media.addEventListener("change", close); return () => media.removeEventListener("change", close); }, []);
+  useEffect(() => { const media = window.matchMedia("(min-width: 1101px)"); const close = () => { if (media.matches) setOpen(false); }; media.addEventListener("change", close); return () => media.removeEventListener("change", close); }, []);
   const go = id => { setOpen(false); navigate(`/#${id}`); };
   return <>
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>

@@ -1,0 +1,104 @@
+/* Phone layouts and conservative rendering. Imported after shared button styles. */
+.hero__dish-float,.hero__stamp svg:first-child,.flavour-band__track,.daawat__satellite{animation-play-state:var(--ambient-play-state,paused)}
+.reservation__field,.reservation__form-wrap,.reservation__media-wrapper,.about__copy,.contact__copy,.footer__links,.footer__contact{min-width:0}
+.contact__actions{flex-wrap:wrap;gap:16px 22px}
+.checkout-summary__row>span,.cart-summary__row>span{overflow-wrap:anywhere}
+.checkout-summary__row>span:last-child,.cart-summary__row>span:last-child{flex-shrink:0}
+.reservation__row{grid-template-columns:repeat(3,minmax(0,1fr))}
+.daawat__extras label:focus-within{outline:3px solid #d64720;outline-offset:3px}
+
+/* Two classes beat .btn regardless of stylesheet order. */
+@media(max-width:1100px){.navbar__cta.btn{display:none}}
+@media(max-width:767px){
+  .navbar,.action-bar{background:var(--color-bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav-overlay,.order-modal-overlay,.reservation__media-note,.cart-summary,.checkout-summary,.checkout-section,.success-card{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .hero__dish{filter:none}
+  .hero__dish-position{will-change:auto}
+  .hero__visual{max-width:100%}
+  .hero__copy,.hero__actions,.hero__bottom,.menu__heading>div,.gallery__heading>div{min-width:0}
+  .hero__description,.menu__intro,.section-sub,.about__lead,.contact__address{overflow-wrap:anywhere}
+  .reservation .reservation__row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .order-footer{flex-wrap:wrap}
+  .quantity-box button{width:44px}
+  .add-cart-btn{min-width:130px}
+  .contact__phone{gap:9px;font-size:14px;overflow-wrap:anywhere}
+  .contact__phone svg{flex-shrink:0}
+  .contact__phone svg:last-child{margin-left:0}
+  .contact__map-label>strong{min-width:0;overflow-wrap:anywhere}
+  .contact__map-label>svg,.contact__map-label>span{flex-shrink:0}
+}
+@media(max-width:400px){
+  .hero h1{font-size:clamp(41px,12.3vw,49px);letter-spacing:-2.4px}
+  .hero__actions{gap:12px}
+  .hero__actions .btn{padding-inline:18px}
+  .hero__secondary{font-size:11px;gap:7px}
+  .hero__bottom{flex-wrap:wrap;gap:8px}
+  .reservation .reservation__row{grid-template-columns:minmax(0,1fr)}
+  .reservation .reservation__row .reservation__field:first-child{grid-column:auto}
+  .reservation__media-note{position:static;transform:none;border-radius:0!important}
+  .footer__top{grid-template-columns:minmax(0,1fr);gap:27px}
+  .footer__invite{grid-column:auto}
+  .footer__invite h2{font-size:clamp(37px,12vw,48px)}
+  .checkout-item{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px}
+  .checkout-item__img{width:52px;height:52px}
+  .checkout-item__price{grid-column:2;white-space:normal;overflow-wrap:anywhere}
+  .checkout-summary__total,.cart-summary__total{font-size:1.15rem}
+  .checkout-summary__row,.cart-summary__row{gap:10px}
+  .cart-summary,.checkout-summary,.checkout-section{padding:18px}
+  .cart-item{grid-template-columns:52px minmax(0,1fr);padding:14px;gap:12px}
+  .cart-item__img{width:52px;height:52px}
+  .cart-item__qty span{width:24px}
+  .cart-page__header{flex-wrap:wrap;align-items:center}
+  .daawat__heading h2{font-size:clamp(31px,10vw,39px)}
+  .daawat__summary{flex-wrap:wrap;gap:8px 14px}
+  .daawat__summary>span{text-align:left}
+}
+@media(max-width:320px){
+  .container{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .hero h1{font-size:clamp(37px,12.8vw,41px);letter-spacing:-2px}
+  .hero__visual{height:270px}
+  .hero__dish-label{right:0;bottom:0;max-width:100%;padding:13px 38px 13px 14px}
+  .hero__dish-label strong{font-size:16px}
+  .hero__made{font-size:8px;right:10px}
+  .hero__stamp{width:76px;height:76px}
+  .brand-word{font-size:29px}
+  .brand-tagline{font-size:6px;letter-spacing:1.7px}
+  .navbar__actions{gap:3px}
+  .action-bar>button,.action-bar>a{flex-direction:column;gap:3px;min-height:48px;font-size:9px}
+  .action-bar>.action-bar__primary{flex:1.1}
+  .about__note{padding:13px 16px;gap:10px;right:0}
+  .about__note p{font-size:12px}
+  .about__note strong{font-size:15px}
+  .contact__hours>div{flex-wrap:wrap;gap:5px}
+  .contact__map-label{gap:8px;padding:12px}
+  .contact__map-label strong{font-size:13px}
+  .daawat__profiles>div{flex-direction:column}
+  .daawat__profiles button{font-size:11px}
+  .daawat__scene{height:260px}
+  .daawat__planner{padding-inline:14px}
+  .order-footer .add-cart-btn{flex-basis:100%}
+  .spice-group{gap:6px}
+  .spice{padding-inline:13px}
+  .cart-item__qty span{width:20px}
+}
+@media(max-width:480px){
+  .reservation .reservation__row{grid-template-columns:minmax(0,1fr)}
+  .reservation .reservation__row .reservation__field:first-child{grid-column:auto}
+}
+@media(orientation:landscape) and (max-height:500px){
+  .order-modal__left{height:130px;min-height:130px}
+  .order-modal__right{padding-top:22px}
+  .nav-drawer{gap:18px;padding-top:max(18px,env(safe-area-inset-top,0px))}
+  .nav-drawer nav{padding-top:0}
+  .nav-drawer nav button{padding-block:12px;font-size:23px}
+}
+
+/* Stop one-shot entry animations too, so paused dialogs never stay invisible. */
+:root[data-motion="off"] *,:root[data-motion="off"] *:before,:root[data-motion="off"] *:after{animation:none!important;transition:none!important}
+:root[data-performance="lite"] *,:root[data-performance="lite"] *:before,:root[data-performance="lite"] *:after{animation:none!important}
+:root[data-performance="lite"] .reveal-ready{opacity:1!important;transform:none!important;transition:none!important}
+:root[data-performance="lite"] .hero__visual{--pointer-x:0px!important;--pointer-y:0px!important}
+:root[data-performance="lite"] .hero__dish,:root[data-performance="lite"] .daawat__main-dish--cutout{filter:none}
+:root[data-performance="lite"] .hero__dish-position{will-change:auto}
+:root[data-performance="lite"] .navbar,:root[data-performance="lite"] .action-bar,:root[data-performance="lite"] .nav-overlay,:root[data-performance="lite"] .order-modal-overlay,:root[data-performance="lite"] .reservation__media-note,:root[data-performance="lite"] .cart-summary,:root[data-performance="lite"] .checkout-summary,:root[data-performance="lite"] .checkout-section,:root[data-performance="lite"] .success-card{-webkit-backdrop-filter:none;backdrop-filter:none}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}

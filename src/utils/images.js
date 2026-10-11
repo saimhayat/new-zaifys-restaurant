@@ -15,7 +15,7 @@ export function resolveImageSrc(src) {
     } catch { /* Relative paths and uploaded data URLs are also supported. */ }
   }
   if (name) {
-    const canonical = `/images/${name.replace(/-(480|800)$/, "")}.webp`;
+    const canonical = `/images/${name.replace(/-(160|320|480|800)$/, "")}.webp`;
     if (imageManifest[canonical]) return canonical;
   }
   return value;
@@ -24,12 +24,14 @@ export function resolveImageSrc(src) {
 /** Only advertise variants that exist; descriptors use their actual widths. */
 export function photoProps(src, sizes = "(max-width: 767px) 90vw, 45vw") {
   const resolved = resolveImageSrc(src), metadata = imageManifest[resolved];
+  // Keep the hero's candidates identical to its preload to avoid a second download.
+  const lite = typeof document !== "undefined" && document.documentElement.dataset.performance === "lite" && resolved !== "/images/hero-karahi.webp";
   return {
     src: resolved,
     ...(metadata ? {
       width: metadata.width,
       height: metadata.height,
-      srcSet: metadata.variants.map(image => `${image.src} ${image.width}w`).join(", "),
+      srcSet: metadata.variants.filter(image => !lite || image.width <= 800).map(image => `${image.src} ${image.width}w`).join(", "),
       sizes,
     } : {}),
   };
