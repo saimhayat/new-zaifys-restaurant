@@ -95,10 +95,11 @@
 
 /* Stop one-shot entry animations too, so paused dialogs never stay invisible. */
 :root[data-motion="off"] *,:root[data-motion="off"] *:before,:root[data-motion="off"] *:after{animation:none!important;transition:none!important}
-:root[data-performance="lite"] *,:root[data-performance="lite"] *:before,:root[data-performance="lite"] *:after{animation:none!important}
-:root[data-performance="lite"] .reveal-ready{opacity:1!important;transform:none!important;transition:none!important}
-:root[data-performance="lite"] .hero__visual{--pointer-x:0px!important;--pointer-y:0px!important}
+:root[data-performance="lite"]:not([data-motion="on"]){scroll-behavior:auto}
+:root[data-performance="lite"]:not([data-motion="on"]) *,:root[data-performance="lite"]:not([data-motion="on"]) *:before,:root[data-performance="lite"]:not([data-motion="on"]) *:after{animation:none!important}
+:root[data-performance="lite"]:not([data-motion="on"]) .reveal-ready{opacity:1!important;transform:none!important;transition:none!important}
+:root[data-performance="lite"]:not([data-motion="on"]) .hero__visual{--pointer-x:0px!important;--pointer-y:0px!important}
 :root[data-performance="lite"] .hero__dish,:root[data-performance="lite"] .daawat__main-dish--cutout{filter:none}
 :root[data-performance="lite"] .hero__dish-position{will-change:auto}
 :root[data-performance="lite"] .navbar,:root[data-performance="lite"] .action-bar,:root[data-performance="lite"] .nav-overlay,:root[data-performance="lite"] .order-modal-overlay,:root[data-performance="lite"] .reservation__media-note,:root[data-performance="lite"] .cart-summary,:root[data-performance="lite"] .checkout-summary,:root[data-performance="lite"] .checkout-section,:root[data-performance="lite"] .success-card{-webkit-backdrop-filter:none;backdrop-filter:none}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}}
+@media(prefers-reduced-motion:reduce){:root:not([data-motion="on"]) *,:root:not([data-motion="on"]) *:before,:root:not([data-motion="on"]) *:after{animation:none!important}}

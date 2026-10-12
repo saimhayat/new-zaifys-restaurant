@@ -1,13 +1,26 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ResponsiveImage from "../ResponsiveImage";
 import { ArrowDown, ArrowUpRight, MapPin, Flame, Utensils, Pause, Play } from "lucide-react";
-import { scrollToSection } from "../../utils/scrollTo";
+import { motionEnabled, scrollToSection } from "../../utils/scrollTo";
 import "./Hero.css";
 export default function Hero() {
   const visualRef = useRef(null);
-  const [paused, setPaused] = useState(() => typeof document !== "undefined" && document.documentElement.dataset.motion === "off");
-  const toggleMotion = () => { const next = !paused; setPaused(next); visualRef.current?.style.setProperty("--pointer-x", "0px"); visualRef.current?.style.setProperty("--pointer-y", "0px"); document.documentElement.dataset.motion = next ? "off" : "on"; try { localStorage.setItem("zaify_motion", next ? "off" : "on"); } catch {} window.dispatchEvent(new Event("zaify-motion")); };
-  const pointer = event => { if (!window.matchMedia("(hover: hover) and (min-width: 768px)").matches || paused || document.documentElement.dataset.performance === "lite" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; const rect = event.currentTarget.getBoundingClientRect(); event.currentTarget.style.setProperty("--pointer-x", `${((event.clientX - rect.left) / rect.width - .5) * 12}px`); event.currentTarget.style.setProperty("--pointer-y", `${((event.clientY - rect.top) / rect.height - .5) * 12}px`); };
+  const [paused, setPaused] = useState(() => typeof document !== "undefined" && !motionEnabled());
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setPaused(!motionEnabled(reduced.matches));
+    update();
+    window.addEventListener("zaify-motion", update);
+    window.addEventListener("zaify-performance", update);
+    reduced.addEventListener("change", update);
+    return () => {
+      window.removeEventListener("zaify-motion", update);
+      window.removeEventListener("zaify-performance", update);
+      reduced.removeEventListener("change", update);
+    };
+  }, []);
+  const toggleMotion = () => { const next = motionEnabled() ? "off" : "on"; setPaused(next === "off"); visualRef.current?.style.setProperty("--pointer-x", "0px"); visualRef.current?.style.setProperty("--pointer-y", "0px"); document.documentElement.dataset.motion = next; try { localStorage.setItem("zaify_motion", next); } catch {} window.dispatchEvent(new Event("zaify-motion")); };
+  const pointer = event => { if (!window.matchMedia("(hover: hover) and (min-width: 768px)").matches || !motionEnabled()) return; const rect = event.currentTarget.getBoundingClientRect(); event.currentTarget.style.setProperty("--pointer-x", `${((event.clientX - rect.left) / rect.width - .5) * 12}px`); event.currentTarget.style.setProperty("--pointer-y", `${((event.clientY - rect.top) / rect.height - .5) * 12}px`); };
   return <section id="home" className="hero">
     <div className="container hero__layout">
       <div className="hero__copy"><div className="hero__location"><span className="hero__dot" /><MapPin size={13} aria-hidden="true" /> RAWALPINDI, PAKISTAN</div><h1>A little spice.<br />A lot of <span>soul<span className="hero__period">.</span></span></h1><p className="hero__description">Big desi flavours. Good company. Unforgettable meals.<br className="desktop-break" /> Pull up a chair — you’re at Zaify’s.</p><div className="hero__actions"><button className="btn btn-gold" onClick={() => scrollToSection("menu")}>Find your flavour <ArrowUpRight size={19} aria-hidden="true" /></button><button className="hero__secondary" onClick={() => scrollToSection("reservation")}>Book a table <span aria-hidden="true">↗</span></button></div><button className="hero__studio-link" onClick={() => scrollToSection("daawat")}><span className="hero__studio-icon" aria-hidden="true">✳</span><span>Bringing your people?<strong>Build your daawat</strong></span><ArrowUpRight size={17} aria-hidden="true" /></button><div className="hero__footnote"><span className="hero__footnote-icon"><Utensils size={17} aria-hidden="true" /></span><p>From our kitchen, with love.<br /><strong>Dine in · Take away · Delivery</strong></p></div></div>

@@ -78,9 +78,10 @@
 .daawat__extras legend{margin-bottom:10px}
 .daawat__extras>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .daawat__extras label{display:flex;align-items:center;gap:8px;position:relative;cursor:pointer;min-height:56px;border:1px solid #2d342323;border-radius:8px;padding:8px;color:#4d5941;min-width:0;transition:background .2s,border-color .2s}
-.daawat__extras label:has(input:checked){background:#e8eddd;border-color:#697c354f}
-.daawat__extras label:has(input:focus-visible){outline:3px solid #d64720;outline-offset:3px}
-.daawat__extras input{position:absolute;opacity:0;width:1px;height:1px}
+.daawat__extras label.daawat__extra--selected{background:#e8eddd;border-color:#697c354f}
+.daawat__extras label:focus-within{outline:3px solid #d64720;outline-offset:3px}
+.daawat__extras input{position:absolute;inset:0;opacity:0;width:100%;height:100%;margin:0;z-index:1;cursor:pointer}
+.daawat__extras input:disabled{cursor:not-allowed}
 .daawat__checkbox{width:16px;height:16px;border:1px solid #2d34233d;border-radius:3px;display:grid;place-items:center;flex-shrink:0;color:transparent}
 .daawat__extras input:checked+.daawat__checkbox{background:#405333;color:#fff;border-color:#405333}
 .daawat__extras label>svg{flex-shrink:0}
@@ -112,4 +113,4 @@
 @media(max-width:767px){.daawat{padding:68px 0}.daawat__heading h2{font-size:clamp(39px,9vw,58px)}.daawat__heading>p{font-size:13px;margin-top:21px}.daawat__heading>p br{display:none}.daawat__heading{margin-bottom:32px}.daawat__showcase-top{font-size:7px;letter-spacing:1px;padding-top:16px}.daawat__edition{font-size:7px}.daawat__scene{height:clamp(295px,78vw,420px);margin-top:7px;margin-bottom:13px}.daawat__urdu{font-size:132px;right:2%;top:-5%}.daawat__table-note{padding:10px 12px;right:0;bottom:2%;font-size:9px;gap:8px}.daawat__orbit--outer{width:95%}.daawat__dish-caption h3{font-size:30px}.daawat__dish-number{font-size:44px}.daawat__dish-description{font-size:12px;min-height:0}.daawat__showcase-footer{margin-top:22px;padding-top:15px;gap:8px}.daawat__showcase-footer>span:first-child{font-size:7px}.daawat__showcase-footer>span:last-child{font-size:9px}.daawat__layout{gap:29px}.daawat__planner{padding:27px 21px 22px}.daawat__planner-title h3{font-size:29px}.daawat__line-info h4{font-size:13px}.daawat__extras label{gap:7px}.daawat__extras label>svg{display:none}.daawat__profiles button{font-size:10px}.daawat__summary output{font-size:33px}.daawat__summary>div>span{font-size:7px}.daawat__add.btn{font-size:11px}.daawat__thumbnail{width:44px;height:44px}.daawat__line{gap:8px}}
 @media(max-width:374px){.daawat__planner{padding-inline:16px}.daawat__line{display:grid;grid-template-columns:44px minmax(0,1fr)}.daawat__thumbnail{grid-row:span 2;align-self:start}.daawat__line-info{grid-column:2}.daawat__quantity{grid-column:2;justify-self:start}.daawat__line-info h4{font-size:13px}.daawat__extras>div{grid-template-columns:1fr}.daawat__extras label>svg{display:block}.daawat__summary{gap:9px}.daawat__summary output{font-size:29px}.daawat__guests>div{gap:6px}.daawat__profiles>div{gap:5px}.daawat__profiles button{font-size:9px;padding-inline:5px}.daawat__edition{display:none}.daawat__heading h2{font-size:36px}.daawat__star--one{font-size:28px}}
 :root[data-motion="off"] .daawat__main-dish{animation:none}
-@media(prefers-reduced-motion:reduce){.daawat__main-dish,.daawat__satellite{animation:none}.daawat__stage{transform:none}}
+@media(prefers-reduced-motion:reduce){:root:not([data-motion="on"]) .daawat__main-dish,:root:not([data-motion="on"]) .daawat__satellite{animation:none}:root:not([data-motion="on"]) .daawat__stage{transform:none}}

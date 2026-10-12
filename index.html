@@ -18,7 +18,8 @@
     <script>
       try {
         document.documentElement.dataset.theme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
-        document.documentElement.dataset.motion = localStorage.getItem('zaify_motion') === 'off' ? 'off' : 'on';
+        const motion = localStorage.getItem('zaify_motion');
+        document.documentElement.dataset.motion = motion === 'on' || motion === 'off' ? motion : 'auto';
       } catch (_) {}
     </script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Zaify's Restaurant","servesCuisine":["Pakistani","BBQ","Chinese","Continental","Steakhouse"],"telephone":"+92-300-6165529","address":{"@type":"PostalAddress","streetAddress":"57-B, Block B, Commercial Market, Satellite Town","addressLocality":"Rawalpindi","addressCountry":"PK"},"acceptsReservations":true}</script>

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motionEnabled } from "../utils/scrollTo";
 export function useScrollMotion() {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)"), small = window.matchMedia("(max-width: 767px)");
@@ -7,7 +8,7 @@ export function useScrollMotion() {
     const update = () => {
       frame = 0;
       if (document.hidden) return;
-      const height = Math.max(1, window.innerHeight), enabled = !reduced.matches && document.documentElement.dataset.motion !== "off" && document.documentElement.dataset.performance !== "lite";
+      const height = Math.max(1, window.innerHeight), enabled = motionEnabled(reduced.matches);
       if (measure) { range = Math.max(0, document.documentElement.scrollHeight - height); measure = false; }
       const values = scenes.map(scene => {
         if (!enabled) return 0;

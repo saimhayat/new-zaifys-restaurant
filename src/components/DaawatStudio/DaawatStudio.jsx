@@ -37,7 +37,8 @@ export default function DaawatStudio() {
     const item = menu.find(dish => dish.id === extra.id);
     setSelections(current => {
       const next = { ...current };
-      if (enabled && item) next[extra.id] = daawatSelection(item, guests, true);
+      const selected = enabled ?? !Boolean(current[extra.id]);
+      if (selected && item && item.available !== false) next[extra.id] = daawatSelection(item, guests, true);
       else delete next[extra.id];
       return next;
     });
@@ -87,8 +88,12 @@ export default function DaawatStudio() {
             {!lines.length && <p className="daawat__unavailable">This spread isn’t available right now. Try another mood or explore the menu.</p>}
           </div>
           <fieldset className="daawat__extras"><legend>A little extra?</legend><div>{DAAWAT_EXTRAS.map(extra => {
-            const item = menu.find(dish => dish.id === extra.id), disabled = !item || item.available === false;
-            return <label key={extra.id} className={disabled ? "daawat__extra--unavailable" : ""}><input type="checkbox" checked={Boolean(selections[extra.id])} disabled={disabled} onChange={event => toggleExtra(extra, event.target.checked)} /><span className="daawat__checkbox" aria-hidden="true"><Check size={13} /></span>{extra.icon === "sweet" ? <Sparkles size={17} aria-hidden="true" /> : <GlassWater size={17} aria-hidden="true" />}<span><strong>{extra.name}</strong><small>{disabled ? "Currently unavailable" : extra.note}</small></span></label>;
+            const item = menu.find(dish => dish.id === extra.id), disabled = !item || item.available === false, selected = Boolean(selections[extra.id]);
+            return <label key={extra.id} htmlFor={`daawat-extra-${extra.id}`} className={`${disabled ? "daawat__extra--unavailable" : ""} ${selected ? "daawat__extra--selected" : ""}`.trim()} onClick={event => {
+              if (event.target.tagName === "INPUT") return;
+              event.preventDefault();
+              if (!disabled) toggleExtra(extra);
+            }}><input id={`daawat-extra-${extra.id}`} type="checkbox" checked={selected} disabled={disabled} onChange={event => toggleExtra(extra, event.target.checked)} /><span className="daawat__checkbox" aria-hidden="true"><Check size={13} /></span>{extra.icon === "sweet" ? <Sparkles size={17} aria-hidden="true" /> : <GlassWater size={17} aria-hidden="true" />}<span><strong>{extra.name}</strong><small>{disabled ? "Currently unavailable" : extra.note}</small></span></label>;
           })}</div></fieldset>
           {unavailable && <p className="daawat__unavailable" role="status">Unavailable dishes are excluded from your subtotal and bag.</p>}
           <div className="daawat__summary"><div><span>YOUR SPREAD · FOOD SUBTOTAL</span><output aria-live="polite" aria-atomic="true" aria-label="Spread subtotal">{formatRs(subtotal)}</output></div><span>{chosen.length > 0 ? <>About <strong>{formatRs(subtotal / guests)}</strong><br />per person</> : "Add a dish to begin"}</span></div>

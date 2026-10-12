@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motionEnabled } from "../utils/scrollTo";
 
 /** CSS does the animation; the observer only switches work on visible scenes. */
 export function useAmbientMotion() {
@@ -7,7 +8,7 @@ export function useAmbientMotion() {
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)");
     const visible = new Set();
     const update = () => {
-      const enabled = !document.hidden && !reduced?.matches && document.documentElement.dataset.motion !== "off" && document.documentElement.dataset.performance !== "lite";
+      const enabled = !document.hidden && motionEnabled(reduced?.matches);
       scenes.forEach(scene => scene.style.setProperty("--ambient-play-state", enabled && visible.has(scene) ? "running" : "paused"));
     };
     const observer = window.IntersectionObserver ? new window.IntersectionObserver(entries => {

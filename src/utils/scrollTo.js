@@ -1,5 +1,9 @@
-export function motionEnabled() {
-  return document.documentElement.dataset.motion !== "off" && !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+export function motionEnabled(reducedMotion) {
+  const { motion, performance } = document.documentElement.dataset;
+  if (motion === "off") return false;
+  if (motion === "on") return true;
+  const reduced = reducedMotion ?? Boolean(window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches);
+  return !reduced && performance !== "lite";
 }
 
 export function scrollToSection(id, { behavior } = {}) {
